@@ -1,0 +1,24 @@
+# Business Revenue Summary Application
+
+This is a lightweight Next.js application designed for business internal tracking. It allows the owner to manually enter daily sales summaries (branch, product type, quantity, revenue) via mobile devices and visualizes the branch performance.
+
+## Tech Stack
+- Frontend/Backend: Next.js 14 (App Router, Client Component for the main dashboard)
+- Database: Supabase (PostgreSQL)
+- Visualization: Recharts (Bar Charts)
+- Deployment: Vercel
+
+## Database Schema (`business_summary` table)
+- `id`: bigint (Primary Key)
+- `created_at`: timestamp with time zone
+- `date`: date (default current_date)
+- `branch`: text (e.g., 'สาขา A', 'สาขา B')
+- `product_type`: text (e.g., 'สินค้าทั่วไป')
+- `quantity`: integer
+- `revenue`: numeric
+
+## Key API Endpoints
+- `POST /api/insert`: Accepts JSON body `{ branch, product_type, quantity, revenue }` to insert transactional logs into Supabase.
+
+## User Persona & Role
+- Owner-operated data entry. No complex authentication is implemented in this version to preserve speed and simplicity. Optimized for smartphone UI.
