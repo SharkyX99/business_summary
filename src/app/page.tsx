@@ -286,11 +286,11 @@ export default function Home() {
       const data = await res.json();
       if (!Array.isArray(data)) return;
       setAllServerData(data);
-      const dates: string[] = [
-        ...new Set(
+      const dates: string[] = Array.from(
+        new Set(
           data.filter((i: any) => i.sales_date).map((i: any) => i.sales_date),
         ),
-      ];
+      );
       setAvailableDates(dates);
       if (!dates.includes(dateA)) setDateA(dates[0] || "");
       if (!dates.includes(dateB)) setDateB(dates[1] || "");
