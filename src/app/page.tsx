@@ -346,7 +346,15 @@ function KpiCard({ label, value, sub, icon, isLarge = false }) {
 }
 
 /* ─── Tooltip ───────────────────────────────── */
-function CustomTooltip({ active, payload, label }) {
+function CustomTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: any;
+  payload?: any;
+  label?: any;
+}) {
   if (!active || !payload?.length) return null;
   return (
     <div
@@ -398,7 +406,15 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 /* ─── Qty Tooltip (for product chart - shows ชิ้น not ฿) ── */
-function QtyTooltip({ active, payload, label }) {
+function QtyTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: any;
+  payload?: any;
+  label?: any;
+}) {
   if (!active || !payload?.length) return null;
   return (
     <div
