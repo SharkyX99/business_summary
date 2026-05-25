@@ -20,13 +20,13 @@ import * as XLSX from "xlsx";
 /* ── SweetAlert2 loader ── */
 const loadSwal = () =>
   new Promise((resolve) => {
-    if (window.Swal) {
-      resolve(window.Swal);
+    if ((window as any).Swal) {
+      resolve((window as any).Swal);
       return;
     }
     const s = document.createElement("script");
     s.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11";
-    s.onload = () => resolve(window.Swal);
+    s.onload = () => resolve((window as any).Swal);
     document.head.appendChild(s);
   });
 
