@@ -32,11 +32,11 @@ const loadSwal = () =>
 
 const swal = {
   fire: async (opts) => {
-    const S = await loadSwal();
+    const S: any = await loadSwal();
     return S.fire(opts);
   },
   confirm: async (opts) => {
-    const S = await loadSwal();
+    const S: any = await loadSwal();
     return S.fire({
       icon: "warning",
       showCancelButton: true,
